@@ -1,0 +1,12 @@
+<!DOCTYPE html><html>
+	<head>
+		<meta charset="utf-8">
+		<title>{{ .Vanitydomain }}</title>
+	</head>
+	<body>
+        <h1>Module index</h1>
+        <ul>{{range .Modules }}
+    	    <li><a href="{{ .Name }}/index.html">{{ $.Vanitydomain }}/{{ .Name }}</a></li>{{end}}
+	    </ul>
+	</body>
+</html>

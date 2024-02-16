@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="utf-8">
+		<title>{{ .Module.Name }}</title>
+		<meta name="go-import" content="{{ .Module.Vanitymodulename }} git {{ .Module.Repository }}.git">
+		<meta name="go-source" content="{{ .Module.Vanitymodulename }} {{ .Module.Homepage }} {{ .Module.Repository }}/tree/{{ if .Module.Branch }}{{ .Module.Branch }}{{ else }}{{ .DefaultBranch }}{{ end }}{/dir} {{ .Module.Repository }}/blob/{{ if .Module.Branch }}{{ .Module.Branch }}{{ else }}{{ .DefaultBranch }}{{ end }}{/dir}/{file}#L{line}">
+
+		<title>{{ .Module.Name }} - {{ .Module.Vanitymodulename }}</title>
+		<style>
+            button {
+                display: inline-block;
+                margin-bottom: 0;
+                font-weight: 400;
+                text-align: center;
+                vertical-align: middle;
+                cursor: pointer;
+                background-image: none;
+                border: 1px solid transparent;
+                border-top-color: transparent;
+                border-right-color: transparent;
+                border-bottom-color: transparent;
+                border-left-color: transparent;
+                white-space: nowrap;
+                padding: 6px 12px;
+                font-size: 14px;
+                line-height: 1.42857143;
+                border-radius: 4px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                color: #fff;
+                background-color: #5bc0de;
+                border-color: #46b8da;
+                padding: 10px 16px;
+                font-size: 18px;
+                line-height: 1.33;
+                border-radius: 6px;
+            }
+
+            code {
+                display: block;
+                padding: 9.5px;
+                margin: 0 0 10px;
+                font-size: 13px;
+                line-height: 1.42857143;
+                word-break: break-all;
+                word-wrap: break-word;
+                color: #333;
+                background-color: #f5f5f5;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+  			html,
+			body {
+				height: 100%;
+			}
+
+            :root {
+                  --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                  --system-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            }
+
+			body {
+                font-family: var(--system-ui);
+			}
+
+			code {
+				font-family: var(--system-mono);
+			}
+
+            .label {
+                background-color: #999;
+                display: inline;
+                padding: .2em .6em .3em;
+                font-size: 75%;
+                font-weight: 700;
+                line-height: 1;
+                color: #fff;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: baseline;
+                border-radius: .25em;
+            }
+
+            .version {
+                margin: 1em;
+                font-size: 14pt;
+                letter-spacing: .1rem;
+            }
+
+            .version>.current {
+                font-weight: 600;
+                color: black;
+            }
+
+            .container {
+                display: grid; 
+                grid-template-columns: 0.8fr 1fr 0.5fr 0.8fr; 
+                grid-template-rows: 0fr 0.4fr 1.6fr 0.1fr; 
+                gap: 1em 1em; 
+                grid-template-areas: 
+                    ". . . ."
+                    ". header header ."
+                    ". main side ."
+                    ". . . ."; 
+            }
+
+            .header { grid-area: header; }
+            .main { grid-area: main; }
+            .side { grid-area: side; }
+		</style>
+	</head>
+	<body>
+        <div class="container">
+            <div class="header">
+                <h1>{{ .Module.Vanitymodulename }}</h1>
+                <hr/>
+                <a href="{{ .Module.Repository }}.git/tree/{{ if .Module.Branch }}{{ .Module.Branch }}{{ else }}{{ .DefaultBranch }}{{ end }}"><button>Source Code</button></a>
+                <a href="https://pkg.go.dev/{{ .Module.Vanitymodulename }}"><button>API Documentation</button></a>
+            </div>
+            <div class="main">
+                <h2>Getting started</h2>
+                <div>
+                    <p>To get the package, execute:</p>
+                    <code>go get {{ .Module.Vanitymodulename }}</code>
+                </div>
+                <div>
+                    <p>To import this package, add the following line to your code:</p>
+                    <code>import "{{ .Module.Vanitymodulename }}"</code>
+                    
+                </div>
+                <div>
+                    <p>For more details, see the API documentation.</p>
+                </div>
+                <h2>Subpackage documentation</h2>
+                <ul>
+                    <li><a href="https://pkg.go.dev/{{ .Module.Vanitymodulename }}">{{ .Module.Vanitymodulename }}</a></li>{{range .Module.Subpackages}}
+                    <li><a href="https://pkg.go.dev/{{ $.Module.Vanitymodulename }}/{{ . }}">{{ $.Module.Vanitymodulename }}/{{ . }}</a></li>{{end}}
+                </ul>
+            </div>
+            <div class="side">
+                <h2>Version</h2>
+                <div class="version">
+                {{ if .Module.Branch }}{{ .Module.Branch }}{{ else }}v0.x.x{{ end }}
+                </div>
+                {{range $branch, $version := .Module.Versions}}
+                <div class="version">
+                    <a href="/{{ $.Name }}">{{ if $branch }}{{ $branch }}{{ else }}v0{{ end }}</a>
+                    &rarr;
+                    <span class="label label-default">{{ $version }}</span>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+	</body>
+</html>
