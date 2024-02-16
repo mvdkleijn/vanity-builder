@@ -108,6 +108,9 @@
                     ". . . ."; 
             }
 
+            .tiny { font-size: 8pt; margin: 0; }
+            h1 { margin: 0; padding: 0; }
+
             .header { grid-area: header; }
             .main { grid-area: main; }
             .side { grid-area: side; }
@@ -117,6 +120,7 @@
         <div class="container">
             <div class="header">
                 <h1>{{ .Module.Vanitymodulename }}</h1>
+                <a class="tiny" href="/">go to modules index</a>
                 <hr/>
                 <a href="{{ .Module.Repository }}.git/tree/{{ if .Module.Branch }}{{ .Module.Branch }}{{ else }}{{ .DefaultBranch }}{{ end }}"><button>Source Code</button></a>
                 <a href="https://pkg.go.dev/{{ .Module.Vanitymodulename }}"><button>API Documentation</button></a>
