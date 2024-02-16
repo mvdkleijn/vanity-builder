@@ -5,15 +5,17 @@ that can be used for vanity URL hosting.
 
 ## Development notes
 
-go-import: <vanityDomain>/<moduleName> git https://github.com/<user or org>/<repo>.git
+go-import: `<vanityDomain>/<moduleName> git https://github.com/<user or org>/<repo>.git`
 
-go-source: content="<prefix> <homepage> <directory template> <file template>"
-where:
-  prefix  : <vanityDomain>/<moduleName>
-            (import path corresponding to repo root)
-  homepage: <homepageURL>
-            (url of repos homepage where "_" signifies no homepage url)
-  directory template: https://github.com/<user or org>/<repo>/tree/<branch>{/dir}
-                      (url template for listing files in pkg)
-  file template     : https://github.com/<user or org>/<repo>/blob/<branch>{/dir}/{file}#L{line}
-                      (url template for line in file)
+go-source: `content="<prefix> <homepage> <directory template> <file template>"`
+Where:
+  - prefix: `<vanityDomain>/<moduleName>`
+    - The import path corresponding to the repo root
+    - `<moduleName>` can include major version, e.g. `moduleName` or `moduleName/v2`
+  - homepage: `<homepageURL>`
+    - The url of the repo's homepage
+    - The '_' character can be used to signify the absence of a homepage
+  - directory template: `https://github.com/<user or org>/<repo>/tree/<branch>{/dir}`
+    - An template used to create the URL for listing the files in the module
+  - file template: `https://github.com/<user or org>/<repo>/blob/<branch>{/dir}/{file}#L{line}`
+    - An template used to create the url that points to a line in a file
