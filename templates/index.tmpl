@@ -2,6 +2,23 @@
 	<head>
 		<meta charset="utf-8">
 		<title>{{ .Vanitydomain }}</title>
+		<style>
+  			html,
+			body {
+				height: 100%;
+			}
+
+            :root {
+                  --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                  --system-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            }
+
+			body {
+                font-family: var(--system-ui);
+			}
+
+            h1 { margin: 0; padding: 0; }
+		</style>
 	</head>
 	<body>
         <h1>Module index</h1>
