@@ -122,7 +122,7 @@
                 <h1>{{ .Module.Vanitymodulename }}</h1>
                 <a class="tiny" href="/">go to modules index</a>
                 <hr/>
-                <a href="{{ .Module.Repository }}.git/tree/{{ if .Module.Branch }}{{ .Module.Branch }}{{ else }}{{ .DefaultBranch }}{{ end }}"><button>Source Code</button></a>
+                <a href="{{ .Module.Repository }}/tree/{{ if .Module.Branch }}{{ .Module.Branch }}{{ else }}{{ .DefaultBranch }}{{ end }}"><button>Source Code</button></a>
                 <a href="https://pkg.go.dev/{{ .Module.Vanitymodulename }}"><button>API Documentation</button></a>
             </div>
             <div class="main">
