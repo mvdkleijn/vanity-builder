@@ -1,7 +1,6 @@
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/mvdkleijn/vanity-builder?style=for-the-badge)
 [![Codacy grade](https://img.shields.io/codacy/grade/dd407766bf6249e28daa954348d5e672?style=for-the-badge)](https://app.codacy.com/gh/mvdkleijn/vanity-builder)
-[![Go Report Card](https://goreportcard.com/badge/github.com/mvdkleijn/vanity-builder?style=for-the-badge)](https://goreportcard.com/report/github.com/mvdkleijn/vanity-builder) [![Liberapay patrons](htt
-ps://img.shields.io/liberapay/patrons/mvdkleijn?style=for-the-badge)](https://liberapay.com/mvdkleijn/) [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O4O7H6C73)
+[![Go Report Card](https://goreportcard.com/badge/github.com/mvdkleijn/vanity-builder?style=for-the-badge)](https://goreportcard.com/report/github.com/mvdkleijn/vanity-builder) [![Liberapay patrons](https://img.shields.io/liberapay/patrons/mvdkleijn?style=for-the-badge)](https://liberapay.com/mvdkleijn/) [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O4O7H6C73)
 
 # vanity-builder
 
