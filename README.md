@@ -1,7 +1,18 @@
 # vanity-builder
 
 Simple tool that takes a YAML based config and generates a set of static HTML files
-that can be used for vanity URL hosting.
+based on Go templates that can be used for vanity URL self-hosting.
+
+**Example**
+
+Use `code.vanderkleijn.net` instead of `github.com` for your modules.
+
+**Why?**
+
+- No renaming issues when (for whatever reason) you're moving away from Github to somewhere else;
+- Code can still be hosted on Github (or other places);
+
+_In other words:_ similar to gopkg.in but easily self-hostable.
 
 ## Development notes
 
